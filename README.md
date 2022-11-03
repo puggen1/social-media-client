@@ -8,7 +8,6 @@ todo:
 
 - prettier to better format code
 - eslint to fix small errors in code
--
 
 ## bugs that might need to be checked
 
