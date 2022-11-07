@@ -34,9 +34,10 @@ jobs:
       - name: setup npm / dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: setup sass and vite
-        run: npm run viteBuild --if-present
-
+      - name: setup sass
+        run: npm run build
+      - name: setup vite
+        run: npm run viteBuild
       - name: upload the build files
         uses: actions/upload-artifact@v2
         with:

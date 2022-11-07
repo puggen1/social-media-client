@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vite",
-    "viteBuild": "sass src/scss:dist/css & vite build",
+    "viteBuild": "vite build",
     "preview": "vite preview",
     "build": "sass src/scss:dist/css",
     "start": "sass --watch src/scss:dist/css & live-server",
