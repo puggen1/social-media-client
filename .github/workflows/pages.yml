@@ -24,16 +24,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # sets up node and then runs vite to create dist folder
-      - name: buildVite
+      - name: node setup
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install
-      - run: npm run viteBuild --if-present
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: run sass and vite
+        run: npm run viteBuild --if-present
+
       - name: checkout
         uses: actions/checkout@v3
+
       - name: Setup
         uses: actions/configure-pages@v2
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
