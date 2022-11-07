@@ -1,8 +1,5 @@
 # course asignment for Workflow
 
-Github pages deploy status:
-[![.github/workflows/pages.yml](https://github.com/puggen1/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/puggen1/social-media-client/actions/workflows/pages.yml)
-
 - babel is added so testing will be easier later
 
 ## automation added:
