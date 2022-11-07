@@ -24,32 +24,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: checkout
-        uses: actions/checkout@v2
+      uses: actions/checkout@v2
       # sets up node and then runs vite to create dist folder
-      - name: setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
+    - name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
 
-      - name: setup npm / dependencies
-        uses: bahmutov/npm-install@v1
-        working-directory: ./
+    - name: setup npm / dependencies
+      uses: bahmutov/npm-install@v1
 
-      - name: setup sass and vite
-        run: npm run viteBuild --if-present
+    - name: setup sass and vite
+      run: npm run viteBuild --if-present
 
-      - name: checkout
-        uses: actions/checkout@v3
+    - name: checkout
+      uses: actions/checkout@v3
 
-      - name: Setup
-        uses: actions/configure-pages@v2
+    - name: Setup
+      uses: actions/configure-pages@v2
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # path to dist folder
-          path: "./dist"
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        # path to dist folder
+        path: "./dist"
           
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
