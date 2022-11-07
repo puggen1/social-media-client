@@ -1,5 +1,6 @@
 import router from "./router/index.js";
 import ui from "./ui/index.js";
-
-ui()
-router()
+// Import all of Bootstrap's JS
+import * as bootstrap from "bootstrap";
+ui();
+router();
