@@ -42,13 +42,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           # path to dist folder
-          name: vite deploy folder
+          name: vite-deployment
           path: ./dist
 
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: production-files
+          name: vite-deployment
           path: ./dist
 
       - name: Deploy to GitHub Pages
