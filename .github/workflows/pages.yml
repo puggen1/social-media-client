@@ -29,10 +29,12 @@ jobs:
         with:
           node-version: 16
       - name: install dependencies
-      - run: npm ci
+        run: npm ci
         working-directory: ./
+
       - name: run sass and vite
-      - run: npm run viteBuild --if-present
+        run: npm run viteBuild --if-present
+
       - name: checkout
         uses: actions/checkout@v3
 
@@ -44,6 +46,7 @@ jobs:
         with:
           # path to dist folder
           path: "./dist"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
