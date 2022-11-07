@@ -3,7 +3,7 @@ name: Deploy to github Pages
 
 on:
   # Runs on merge to main/master
-  merge:
+  push:
     branches: ["master"]
 
   workflow_dispatch:
