@@ -28,13 +28,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-
+      - name: install dependencies
+      - run: npm ci
+        working-directory: ./
       - name: run sass and vite
-        run: npm run viteBuild --if-present
-
+      - run: npm run viteBuild --if-present
       - name: checkout
         uses: actions/checkout@v3
 
