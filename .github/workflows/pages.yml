@@ -4,7 +4,9 @@ name: Deploy to github Pages
 on:
   # Runs on merge to main/master
   merge:
-    branches: ["master"]
+    branches:
+      - master
+      - workflow
 
   workflow_dispatch:
 
@@ -20,15 +22,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
     steps:
       # sets up node and then runs vite to create dist folder
       - name: buildVite
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: [16.x]
       - run: npm ci
       - run: npm run viteBuild --if-present
       - name: checkout
