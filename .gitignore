@@ -23,7 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-
+#eslintcache
+.eslintcache
 #local environment
 
 .env
