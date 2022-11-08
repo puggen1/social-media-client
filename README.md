@@ -1,5 +1,9 @@
 # course asignment for Workflow
 
+## github pages status
+
+[![Deploy static content to Pages](https://github.com/puggen1/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/puggen1/social-media-client/actions/workflows/pages.yml)
+
 - babel is added so testing will be easier later
 
 ## automation added:
