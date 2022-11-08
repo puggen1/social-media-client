@@ -34,6 +34,13 @@ to preview the repo
 npm run vitePreview
 ```
 
+to do tests in jest you have to add your own email and password to an .env file, check .env.example
+
+```
+EMAIL=email@example.com
+PASSWORD=yourPassword
+```
+
 ## bugs that might need to be checked
 
 - id in api/profiles/updates.js?
