@@ -4,7 +4,7 @@ export default {
   build: {
     outDir: "./viteBuild",
   },
-  base: "./social-media-client/",
+  base: "/social-media-client/",
   root: path.resolve(__dirname, "./"),
   resolve: {
     alias: {
