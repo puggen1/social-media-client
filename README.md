@@ -4,6 +4,10 @@
 
 [![Deploy static content to Pages](https://github.com/puggen1/social-media-client/actions/workflows/pages.yml/badge.svg)](https://github.com/puggen1/social-media-client/actions/workflows/pages.yml)
 
+## e2e testing and unit testing
+
+[![test both unit tests and e2e tests](https://github.com/puggen1/social-media-client/actions/workflows/cypressTest.yml/badge.svg)](https://github.com/puggen1/social-media-client/actions/workflows/cypressTest.yml)
+
 - babel is added so testing will be easier later
 
 ## automation added:
