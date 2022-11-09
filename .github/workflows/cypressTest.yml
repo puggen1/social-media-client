@@ -33,6 +33,9 @@ jobs:
           node-version: 18
       - name: Install all npm dependencies
         run: npm i
+        # might be needed for everything to run smoothly
+      - name: run sass to style test files
+        run: npm run build
       - name: run cypress tests
         uses: cypress-io/github-action@v4
         with:
