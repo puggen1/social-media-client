@@ -9,6 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
+viteBuild
 dist-ssr
 *.local
 
@@ -23,7 +24,10 @@ dist-ssr
 *.sln
 *.sw?
 
-
+#eslintcache
+.eslintcache
 #local environment
 
 .env
+#cypress videos
+cypress/videos
