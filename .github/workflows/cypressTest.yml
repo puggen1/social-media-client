@@ -4,8 +4,14 @@ name: test both unit tests and e2e tests
 on:
   # Runs on pushes targeting the master and workflow
   push:
-    branches: ["master", "workflow"]
-
+    branches:
+      - master
+      - "workflow"
+      - "cypress-e2e"
+  pull_request:
+    types: [opened]
+    branches:
+      - "workflow"
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
