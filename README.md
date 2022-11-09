@@ -220,17 +220,17 @@ after:
         "es2021": true,
         "node":true,
         "jest/globals": true,
-        "cypress/globals": true
-    },
-    "extends": "eslint:recommended",
+        "cypress/globals":true
+        },
+    "extends": ["eslint:recommended"],
     "overrides": [
         {
             "files": ["**/*.cy.js"],
             "extends": ["plugin:cypress/recommended"],
             "rules": {
               "cypress/no-unnecessary-waiting": "off",
-              "no-unused-vars": "off",
-              "cypress/no-async-tests": "warn"
+              "no-unused-vars": "off"
+              //"cypress/no-async-tests": "warn"
             }
           }
     ],
@@ -246,6 +246,7 @@ after:
 
 ```
 
+the reason this is needed is to stop eslint from giving errors on cy commands inside cypress commands.js.
 i dont know if this will affect anything else later
 
 ## bugs that might need to be checked

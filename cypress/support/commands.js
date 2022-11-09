@@ -21,7 +21,6 @@ Cypress.Commands.add("createPost", async (title, body) => {
 });
 Cypress.Commands.add("logout", async () => {
   logout();
-  console.log("test this will be removed");
 });
 Cypress.Commands.add("deletePost", async (id) => {
   await deletePost(id);
