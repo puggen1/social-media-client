@@ -9,10 +9,14 @@ describe("checks post form for success and failure", () => {
     //runs log in command
     cy.loginE2E(Cypress.env("EMAIL"), Cypress.env("PASSWORD"));
     //finds the new post button
-    cy.get("#footerActions > a").contains("New Post").click();
+    cy.get("#footerActions > a")
+      .contains("New Post")
+      .should("be.visible")
+      .click();
     cy.wait(2000);
     //checks if we are on the new post page
     cy.url().should("contain", "?view=post");
+
     //writes content to all post fields
     cy.get("#postTitle").type("testPost from cypress", 2000);
     cy.get("#postTags").type("cypress, e2e", 2000);

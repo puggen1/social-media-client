@@ -38,7 +38,7 @@ Cypress.Commands.add("loginE2E", (email, password) => {
   cy.get("#loginPassword").type(password, 2000);
   //clicks login button
   cy.get("#loginForm button").contains("Login").click();
-  cy.wait(1000);
+  cy.wait(2000);
 });
 //
 //
