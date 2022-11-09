@@ -11,6 +11,7 @@ describe("checks the javascript function for logging out", () => {
     });
   });
   it("logs out using the logout function", function () {
+    cy.wait(1000);
     //checks if token is still there...
     cy.getLocalStorage("token").then((key) => {
       expect(key.length).to.be.greaterThan(1);

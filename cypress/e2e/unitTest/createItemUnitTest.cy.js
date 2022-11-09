@@ -1,5 +1,5 @@
 describe("check if the create item function works", () => {
-  it("creates a post check if it was created and then deletes it", async () => {
+  it("creates a post check if it was created and then deletes it", () => {
     //visits development build
     cy.visit("./");
     //clears localstorage
@@ -14,6 +14,7 @@ describe("check if the create item function works", () => {
       //checks if response from create post has an id
       expect(response.id).to.not.be.undefined;
       //deletes the post after test is completed
+      cy.wait(1000);
       cy.deletePost(response.id);
     });
   });
