@@ -28,6 +28,18 @@ Cypress.Commands.add("deletePost", async (id) => {
 Cypress.Commands.add("clearStorage", async () => {
   await cy.clearLocalStorage();
 });
+Cypress.Commands.add("loginE2E", (email, password) => {
+  cy.wait(500);
+  //finds login button and clicks it
+  cy.get(`#registerForm button`).contains("Login", { timeout: 5000 }).click();
+  cy.wait(500);
+  //type email and password into fields
+  cy.get("#loginEmail").type(email, 2000);
+  cy.get("#loginPassword").type(password, 2000);
+  //clicks login button
+  cy.get("#loginForm button").contains("Login").click();
+  cy.wait(1000);
+});
 //
 //
 // -- This is a child command --
