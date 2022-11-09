@@ -18,6 +18,8 @@ env:
   # secrets that is needed for most tests
   EMAIL: ${{secrets.EMAIL}}
   PASSWORD: ${{secrets.PASSWORD}}
+  CYPRESS_RECORD_KEY: ${{ secrets.VIDEO_KEY }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   cypress:
@@ -33,3 +35,5 @@ jobs:
         run: npm i
       - name: run cypress tests
         uses: cypress-io/github-action@v4
+        with:
+          record: true
