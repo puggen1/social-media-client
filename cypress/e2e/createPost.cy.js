@@ -10,7 +10,7 @@ describe("checks post form for success and failure", () => {
     cy.loginE2E(Cypress.env("EMAIL"), Cypress.env("PASSWORD"));
     //finds the new post button
     cy.get("#footerActions > a").contains("New Post").click();
-    cy.wait(500);
+    cy.wait(2000);
     //checks if we are on the new post page
     cy.url().should("contain", "?view=post");
     //writes content to all post fields
