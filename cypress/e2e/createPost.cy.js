@@ -43,7 +43,7 @@ describe("checks post form for success and failure", () => {
     cy.url().should("contain", "?view=post");
     //writes in some fields but not title
     cy.get("#postTags").type("cypress, e2e", 2000);
-    cy.get("#postBody").type("this test should go trough", 2000);
+    cy.get("#postBody").type("this test should not go trough", 2000);
     //clicks the post button
     cy.get("button").contains("Post").click();
     cy.wait(3000);
