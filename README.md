@@ -105,7 +105,7 @@ or cli version
 npm run test-e2e-cli
 ```
 
-## things you can configurate
+## things you can configure
 
 ### vite
 
@@ -248,15 +248,15 @@ after:
 ```
 
 the reason this is needed is to stop eslint from giving errors on cy commands inside cypress commands.js.
-i dont know if this will affect anything else later
+i dont know if this will affect anything else later.
 
 ## bugs that might need to be checked
 
 added issue #73 - bug with paths, has now been fixed
 
 minor issue:
-since i link all of bootstrap using import \* as bootstrap from "bootstrap" inside index.js. the live server and cypress wont work because of this, only vite works as intended.
+since i link all bootstrap using import \* as bootstrap from "bootstrap" inside index.js. the live server and cypress won't work because of this, only vite works as intended.
 potential fix is to run set cypress to run on vite build, but server have to be up for it to work...
 
 small issue:
-if user dont have avatar and you go to the profile, it wont show placeholder avatar... only on thumbnail.. or is this caused by bad link from user?
+if user dont have avatar and you go to the profile, it won't show placeholder avatar... only on thumbnail.. or is this caused by bad link from user?
