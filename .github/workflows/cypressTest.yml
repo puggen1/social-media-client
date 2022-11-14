@@ -1,0 +1,39 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: test both unit tests and e2e tests
+
+on:
+  # Runs on pushes targeting the master and workflow
+  push:
+    branches:
+      - master
+      - "workflow"
+      - "cypress-e2e"
+  # on pull request
+  pull_request:
+    branches:
+      - master
+      - "workflow"
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+env:
+  # secrets that is needed for most tests
+  EMAIL: ${{secrets.EMAIL}}
+  PASSWORD: ${{secrets.PASSWORD}}
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: install node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install all npm dependencies
+        run: npm i
+        # might be needed for everything to run smoothly
+      - name: run sass to style test files
+        run: npm run build
+      - name: run cypress tests
+        uses: cypress-io/github-action@v4
