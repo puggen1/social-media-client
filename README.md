@@ -25,7 +25,8 @@
   - [Vite](#vite-1)
   - [Cypress](#cypress)
   - [Eslint](#eslint)
-- [Bugs i have found](#bugs-that-might-need-to-be-checked)
+- [Bugs i have found](#bugs-and-issues)
+- [Jest](#jest)
 
 ## About project
 
@@ -250,7 +251,7 @@ After:
 The reason this is needed is to stop eslint from giving errors on cy commands inside cypress commands.js.
 I dont know if this will affect anything else later.
 
-## bugs that might need to be checked
+## bugs and issues
 
 Added issue #73 - bug with paths, has now been fixed
 
@@ -260,3 +261,13 @@ Potential fix is to run set cypress to run on vite build, but server have to be 
 
 Minor issue:
 If user dont have avatar and you go to the profile, it won't show placeholder avatar... only on thumbnail.. or is this caused by bad link from user?
+
+problematic issue:
+Sometimes the cypress test fails, it is either the create post e2e test or fail to create post 2e2 test.
+if i rerun the test usually it works, the errors i get change, sometimes it is error: typeError Cannot read property 'value' of null, and sometimes the url does not change... so when the test expect it to change it fails.
+
+problem with the typeError is caused by profile.name does not excist in localstorage, and it gives an error, this can be fixed by adding an error exception...
+
+## Jest
+
+I did not create jest tests for diffrent modules inside the repo, only a sample so jest tests it. this is because i needed localstorage for most of the functions and many rely on many others
