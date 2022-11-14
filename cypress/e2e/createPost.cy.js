@@ -32,6 +32,11 @@ describe("checks post form for success and failure", () => {
     //check if includes postId=
     cy.wait(8000);
     cy.url().should("contain", "postId=");
+
+    //deleting post after test
+    cy.get("button").contains("Delete").scrollIntoView().click({ force: true });
+    cy.wait(5000);
+    cy.url().should("not.contain", "postId=");
   });
   /**
    * @description fails to create an post by not writing the title, that is now the only required input on the api
