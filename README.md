@@ -149,7 +149,7 @@ to use bootstrap add this to the index.js inside src/js
 import * as bootstrap from 'bootstrap'
 ```
 
-**_note_** the above code is currently not being used, it will be used once the repo fixes with the / instead of ./ bug
+**_note_** the above code is not being used because of cypress and liveserver not working as intended, cdn is used for now...
 
 ### cypress
 
@@ -252,4 +252,11 @@ i dont know if this will affect anything else later
 
 ## bugs that might need to be checked
 
-- id in api/profiles/updates.js?
+added issue #73 - bug with paths, has now been fixed
+
+minor issue:
+since i link all of bootstrap using import \* as bootstrap from "bootstrap" inside index.js. the live server and cypress wont work because of this, only vite works as intended.
+potential fix is to run set cypress to run on vite build, but server have to be up for it to work...
+
+small issue:
+if user dont have avatar and you go to the profile, it wont show placeholder avatar... only on thumbnail.. or is this caused by bad link from user?
