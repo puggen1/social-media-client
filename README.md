@@ -30,7 +30,7 @@
 ## About project
 
 This project is set to run prettier, eslint and jest on commit.
-currently i do not test using jest, but added it because of requirements.
+Currently i do not test using jest, but added it because of requirements.
 Instead i use cypress for both e2e test and unit test. these are being runned on push to most branches.
 
 The cypress unit test are accessing cypress localstorage, and is the only thing that is diffrent from regular jest test( i test the functions i would test with jest not the front end).
@@ -39,7 +39,7 @@ The cypress unit test are accessing cypress localstorage, and is the only thing 
 
 ### node
 
-install all node modules
+Install all node modules
 
 ```
 npm i
@@ -47,13 +47,13 @@ npm i
 
 ### vite base url
 
-for vite to function on github pages this needed to be added to vite.config.js
+For vite to function on github pages this needed to be added to vite.config.js
 
 ```
   base: "/social-media-client/",
 ```
 
-**_note_** this has to be the name of your repo
+**_note_** This has to be the name of your repo
 
 ### deploy build
 
@@ -65,7 +65,7 @@ npm run deployBuild
 
 ### vite dev mode
 
-if you want to use dev version of vite
+If you want to use dev version of vite
 
 ```
 npm run dev
@@ -73,7 +73,7 @@ npm run dev
 
 ### vite preview build
 
-to preview the repo
+To preview the repo
 
 ```
 npm run vitePreview
@@ -81,19 +81,19 @@ npm run vitePreview
 
 ### local environment
 
-to run cypress or jest tests you have to add your own email and password to an .env file, check .env.example
+To run cypress or jest tests you have to add your own email and password to an .env file, check .env.example
 
 ```
 EMAIL=email@example.com
 PASSWORD=yourPassword
 ```
 
-email and password must match an excisting profile on the api, that can be created by following the api docs here: https://noroff-api-docs.netlify.app/social-endpoints/authentication#register
+Email and password must match an excisting profile on the api, that can be created by following the api docs here: https://noroff-api-docs.netlify.app/social-endpoints/authentication#register
 or starting localhost / vite to then create a user there
 
 ### run cypress tests
 
-to test cypress e2e and unit test
+To test cypress e2e and unit test
 
 ```
 npm run test-e2e
@@ -105,7 +105,7 @@ or cli version
 npm run test-e2e-cli
 ```
 
-## things you can configure
+## Things you can configure
 
 ### vite
 
@@ -124,14 +124,14 @@ build: {
   path: "./nameOfFolderHere"
 ```
 
-## special configuration i had to do:
+## Special configuration i had to do:
 
-### vite
+### Vite
 
-#### bootsrap x vite
+#### Bootsrap x vite
 
-guide on: https://getbootstrap.com/docs/5.2/getting-started/vite/
-for vite to use bootstrap, some config was needed inside vite.config.js:
+Guide on: https://getbootstrap.com/docs/5.2/getting-started/vite/
+For vite to use bootstrap, some config was needed inside vite.config.js:
 
 I needed to add path to bootstrap node modules
 
@@ -143,19 +143,19 @@ I needed to add path to bootstrap node modules
   }
 ```
 
-to use bootstrap add this to the index.js inside src/js
+To use bootstrap add this to the index.js inside src/js
 
 ```
 import * as bootstrap from 'bootstrap'
 ```
 
-**_note_** the above code is not being used because of cypress and liveserver not working as intended, cdn is used for now...
+**_note_** The above code is not being used because of cypress and liveserver not working as intended, cdn is used for now...
 
 ### cypress
 
-**_note_** this does not need to be changed, but was needed to be done before cypress testing
+**_note_** This does not need to be changed, but was needed to be done before cypress testing
 
-redirecting .env secrets to cypress secrets
+Redirecting .env secrets to cypress secrets
 added this to cypress.config.js:
 
 ```
@@ -163,7 +163,7 @@ require("dotenv/config");"
 
 ```
 
-and
+And
 
 ```
 env: {
@@ -174,9 +174,9 @@ env: {
 
 ### eslint
 
-due to some bugs with eslint and cypress, i needed to move overrides out and into regular
+Due to some bugs with eslint and cypress, i needed to move overrides out and into regular
 
-before:
+Before:
 
 ```
 {
@@ -212,7 +212,7 @@ before:
 
 ```
 
-after:
+After:
 
 ```
 {
@@ -247,16 +247,16 @@ after:
 
 ```
 
-the reason this is needed is to stop eslint from giving errors on cy commands inside cypress commands.js.
-i dont know if this will affect anything else later.
+The reason this is needed is to stop eslint from giving errors on cy commands inside cypress commands.js.
+I dont know if this will affect anything else later.
 
 ## bugs that might need to be checked
 
-added issue #73 - bug with paths, has now been fixed
+Added issue #73 - bug with paths, has now been fixed
 
-minor issue:
-since i link all bootstrap using import \* as bootstrap from "bootstrap" inside index.js. the live server and cypress won't work because of this, only vite works as intended.
-potential fix is to run set cypress to run on vite build, but server have to be up for it to work...
+Minor issue:
+Since i link all bootstrap using import \* as bootstrap from "bootstrap" inside index.js. the live server and cypress won't work because of this, only vite works as intended.
+Potential fix is to run set cypress to run on vite build, but server have to be up for it to work...
 
-small issue:
-if user dont have avatar and you go to the profile, it won't show placeholder avatar... only on thumbnail.. or is this caused by bad link from user?
+Minor issue:
+If user dont have avatar and you go to the profile, it won't show placeholder avatar... only on thumbnail.. or is this caused by bad link from user?
