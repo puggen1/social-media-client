@@ -47,8 +47,7 @@ npm i
 
 ### vite base url
 
-for vite to function on github pages (when bug is fixed)
-this needed to be added to vite.config.js
+for vite to function on github pages this needed to be added to vite.config.js
 
 ```
   base: "/social-media-client/",
@@ -110,8 +109,8 @@ npm run test-e2e-cli
 
 ### vite
 
-change vite output folder
-change this inside vite.config.js
+To change vite output folder:
+Change this inside vite.config.js
 
 ```
 build: {
@@ -119,7 +118,7 @@ build: {
   }
 ```
 
-if the above is changed, you also need to change folder on pages.yml
+**_important_** If the above is changed, you also need to change folder on pages.yml
 
 ```
   path: "./nameOfFolderHere"
@@ -132,9 +131,9 @@ if the above is changed, you also need to change folder on pages.yml
 #### bootsrap x vite
 
 guide on: https://getbootstrap.com/docs/5.2/getting-started/vite/
-for vite to use bootstrap some config was needed inside vite.config.js
+for vite to use bootstrap, some config was needed inside vite.config.js:
 
-need to add path to bootstrap node modules
+I needed to add path to bootstrap node modules
 
 ```
  resolve: {
@@ -143,7 +142,7 @@ need to add path to bootstrap node modules
     }
 ```
 
-to use bootsrap add this to the index.js inside src/js
+to use bootstrap add this to the index.js inside src/js
 
 ```
 import * as bootstrap from 'bootstrap'
