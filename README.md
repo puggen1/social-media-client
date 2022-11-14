@@ -140,6 +140,7 @@ I needed to add path to bootstrap node modules
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
+  }
 ```
 
 to use bootstrap add this to the index.js inside src/js
@@ -164,7 +165,8 @@ require("dotenv/config");"
 
 and
 
-```env: {
+```
+env: {
       EMAIL: process.env.EMAIL,
       PASSWORD: process.env.PASSWORD,
     }
