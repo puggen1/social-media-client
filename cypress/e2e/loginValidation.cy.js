@@ -29,19 +29,19 @@ describe("checks if the login validates correctly", () => {
    * @description tries to log in with excisting email but wrong password
    *  does not work yet
    */
-  /*
+
   it("tries to log in with wrong password", function () {
     //visit page
     cy.visit("./");
     cy.wait(500);
+    //adds "evenlistener" for alert window
+    cy.on("window:alert", (alert) => {
+      expect(alert).to.contains(
+        "Either your username was not found or your password is incorrect"
+      );
+    });
     //tries to log in with wrong password
     cy.loginE2E(Cypress.env("EMAIL"), "fakePassword");
     cy.wait(2000);
-    cy.on("uncaught:exception", (error) => {
-      expect(error).to.be.equal(401);
-    });
-    //url should not change
-    cy.url().should("not.contain", "?new=profile");
   });
-  */
 });

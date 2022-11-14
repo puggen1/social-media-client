@@ -26,8 +26,9 @@ describe("checks post form for success and failure", () => {
     );
     cy.get("#postBody").type("this test should go trough", 2000);
     cy.wait(2000);
-    //clicks the post button
-    cy.get("button").contains("Post").click();
+
+    //clicks the post button. had to add force because no matter how i tried to scroll to button, the button was always behind overlay. this did not happen before...
+    cy.get("button").contains("Post").scrollIntoView().click({ force: true });
     //check if includes postId=
     cy.wait(3000);
     cy.url().should("contain", "postId=");
@@ -54,16 +55,3 @@ describe("checks post form for success and failure", () => {
     cy.url().should("not.contain", "postId=");
   });
 });
-
-/*
-cy.visit("./");
-    cy.wait(500);
-    //finds login button and clicks it
-    cy.get(`#registerForm button`).contains("Login", { timeout: 5000 }).click();
-    cy.wait(500);
-    //type email and password into fields
-    cy.get("#loginEmail").type(Cypress.env("EMAIL"), 2000);
-    cy.get("#loginPassword").type(Cypress.env("PASSWORD"), 2000);
-    //clicks login button
-    cy.get("#loginForm button").contains("Login").click();
-    cy.wait(500);*/

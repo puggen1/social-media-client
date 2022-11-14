@@ -1,6 +1,6 @@
 {
   "name": "css-frameworks-ca",
-  "version": "1.6.5",
+  "version": "1.6.10",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,7 @@
     "lint": "eslint src/js/*.js",
     "lintFixer": "eslint  src/js/*.js --fix --cache",
     "prepare": "husky install",
-    "test": "npm run test-unit",
-    "test-unit": "jest",
+    "test": "jest",
     "test-e2e": "cypress open",
     "test-e2e-cli": "cypress run"
   },
